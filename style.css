@@ -92,3 +92,11 @@ body {
 html:not(.running) .ph-pause-circle {
   display: none;
 }
+
+@media (width < 768px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    gap: 6.4rem;
+  }
+}
