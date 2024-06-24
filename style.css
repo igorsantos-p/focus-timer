@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: hsl(0, 0%, 100%);
+  --text-color: hsl(240, 6%, 21%);
+  --button-primary: hsl(240, 9%, 89%);
+  --button-secondary: hsl(194, 97%, 31%);
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+button {
+  border: none;
+  background: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 4.8rem;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+#app {
+  gap: 192px;
+  align-items: center;
+}
+
+.timer-wrapper {
+  flex-direction: column;
+  gap: 4rem;
+}
+
+#timer {
+  font-size: 12.6rem;
+  font-weight: 500;
+}
+
+#controls {
+  gap: 4rem;
+  justify-content: center;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+#sounds button {
+  background: var(--button-primary);
+  padding: 4.8rem;
+  border-radius: 2.4rem;
+  transition: 300ms;
+}
+
+#sounds button:hover {
+  transform: scale(1.1);
+}
+
+#sounds button.active {
+  background: var(--button-secondary);
+  color: var(--bg-color);
+}
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+  display: none;
+}
